@@ -121,12 +121,12 @@ jobs:
             kubectl -n default get pod
             sleep 10
         
-    integration-testing:
+    integration-test:
       runs-on: ubuntu-latest
       needs: dev-deploy
       steps:
         - name: Run integration tests
-          uses: ./.github/workflows/reuable-workflow.yml
+          uses: ./.github/workflows/reusable-workflow.yml
           with:
             ingress-url: ${{ needs.dev-deploy.outputs.APP_INGRESS_URL }}
         
